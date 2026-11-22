@@ -172,30 +172,9 @@
     <h2 class="sec-title">出欠のご連絡</h2>
     <p style="margin-bottom:28px">お手数ではございますが<br><strong>2027年2月20日（土）</strong>までにご回答くださいますよう<br>お願い申し上げます</p>
 
-    <form id="rsvp-form" action="https://docs.google.com/forms/d/e/1FAIpQLSfGcgKayhMCxEd3uzAMoVR0OTY5wYdsmG6Fjgs9GfXkHZWlcA/formResponse" method="POST" target="hidden_iframe">
-      <label>ご出席 / ご欠席</label>
-      <div class="radio-row">
-        <label class="radio-card"><input type="radio" name="entry.1662722303" value="ご出席" required><span>ご出席</span></label>
-        <label class="radio-card"><input type="radio" name="entry.1662722303" value="ご欠席"><span>ご欠席</span></label>
-      </div>
-      <label for="f-name">お名前</label>
-      <input type="text" id="f-name" name="entry.496450243" placeholder="例：山田 太郎" required>
-      <label for="f-kana">お名前（ふりがな）</label>
-      <input type="text" id="f-kana" name="entry.1534698186" placeholder="例：やまだ たろう">
-      <label for="f-email">メールアドレス</label>
-      <input type="email" id="f-email" name="entry.349735578" placeholder="例：example@mail.com">
-      <label for="f-allergy">アレルギー等（お食事について）</label>
-      <input type="text" id="f-allergy" name="entry.1062600614" placeholder="なければ空欄で構いません">
-      <label for="f-message">メッセージ</label>
-      <textarea id="f-message" name="entry.1747530611" placeholder="新郎新婦へのメッセージなど"></textarea>
-      <div style="text-align:center"><button type="submit" class="btn solid">この内容で送信する</button></div>
-      <p class="form-note">送信内容はGoogleフォームに保存されます。</p>
-    </form>
-    <iframe name="hidden_iframe" style="display:none" title="送信処理用"></iframe>
-    <div class="thanks" id="rsvp-thanks">
-      <p style="font-size:1.2rem;margin-bottom:10px">ご回答ありがとうございます</p>
-      <p>当日お会いできますことを<br>心より楽しみにしております</p>
-    </div>
+    <p style="margin-bottom:10px">下のボタンから Googleフォームへ移動して<br>ご回答をお願いいたします</p>
+    <a class="btn solid" href="https://docs.google.com/forms/d/e/1FAIpQLSfGcgKayhMCxEd3uzAMoVR0OTY5wYdsmG6Fjgs9GfXkHZWlcA/viewform" style="font-size:1rem;padding:18px 48px">出欠を回答する</a>
+    <p class="form-note">ボタンを押すと Googleフォームのページへ遷移します。<br>送信内容は Googleフォームに保存されます。</p>
   </div>
 </section>
 
@@ -232,16 +211,6 @@
     }
     tick(); setInterval(tick,1000);
   })();
-  // RSVP（Googleフォームへ送信し、完了画面を表示）
-  document.getElementById('rsvp-form').addEventListener('submit',function(){
-    var form=this;
-    setTimeout(function(){
-      form.style.display='none';
-      var thanks=document.getElementById('rsvp-thanks');
-      thanks.style.display='block';
-      thanks.scrollIntoView({behavior:'smooth',block:'center'});
-    },600);
-  });
 </script>
 </body>
 </html>
